@@ -13,6 +13,9 @@ class Order:
             raise ValueError("the price must be between 1.0 - 10.0")
         self._price = float(price)
 
+        customer._orders.append(self)
+        coffee._orders.append(self)
+
 
     @property
     def price(self):
