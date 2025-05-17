@@ -13,6 +13,7 @@ class Order:
             raise ValueError("the price must be between 1.0 - 10.0")
         self._price = float(price)
 
+
     @property
     def price(self):
         return self._price
@@ -24,3 +25,22 @@ class Order:
     @property
     def coffee(self):
         return self._coffee
+
+if __name__ == "__main__":
+    from coffee import Coffee
+    from order import Order
+
+    alice = Customer("alice")
+
+    bob = Customer("bob")
+    latte = Coffee("latte")
+    cappuchinno= Coffee("cappuchinno")
+    order1 = alice.create_order(latte, 4.7)
+    order2 = bob.create_order(cappuchinno, 8.0)
+    print(alice.name)
+    print(order1.price)
+    print(order1.customer.name)
+    print(order1.coffee.name)
+    print(order2.coffee.name)
+    print("total orders for latte:",latte.num_orders())
+
